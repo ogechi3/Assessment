@@ -15,8 +15,10 @@ import Menu from "./Menu";
 
 
 
+
 const Navbar = () => {
   const [profileOpen, setProfileOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   return (
     <div className="bg-[#273043] text-[#FEFEFE]  h-[290px] w-full relative">
       {" "}
@@ -29,7 +31,7 @@ const Navbar = () => {
           height={40}
           className="cursor-pointer z-30"
         />
-        <Menu/>
+       <Menu/>
       </div>
       <header className="hidden md:flex flex-row  justify-between items-center gap-8 p-5 border-b border-[FEFEFE] ">
         <Image

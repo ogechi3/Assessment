@@ -21,7 +21,7 @@ const ChartToggle = () => {
   return (
     <div className="mt-20 mx-5 my-5 px-5">
       <h1 className="font-bold leading-5 m-5">Budget Breakdown</h1>
-      <div className="lg:flex lg:flex-row gap-2 h-[400px] w-full ">
+      <div className="flex flex-col lg:flex-row gap-2 h-[400px] w-full ">
         <div className=" bg-white rounded-md ring-1 ring-slate-500 shadow-[0_3px_10px_rgb(0,0,0,0.2)] h-100% lg:w-3/4">
           <div className="flex flex-row items-center justify-between ">
             <div className="font-bold">
@@ -89,8 +89,11 @@ const ChartToggle = () => {
             </ResponsiveContainer>
           </div>
         </div>
+        <div className="h-100% items-stretch">
 
         <DonutChart />
+
+        </div>
       </div>
     </div>
   );

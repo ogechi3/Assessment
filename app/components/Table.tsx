@@ -13,97 +13,99 @@ const Table = () => {
   const [transfer, setTransfer] = useState(false);
 
   return (
-    <div className="bg-white rounded-md ring-1 h-full ring-slate-500 shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:m-8 relative overflow-x-auto px-5">
-      <header className="flex flex-row justify-between items-center p-5 border-b border-gray-400">
-        <div className="">
-          <form className=" ring-1 ring-gray-200 p-2 pr-8 rounded-[10px] items-center ">
-            <button className="cursor-pointer relative w-full max-w-sm">
-              <input type="name" placeholder="Search" />
-            </button>
-          </form>
-        </div>
-        <div className="hidden md:flex gap-2">
-          <div>
-            <button
-              className="ring-1 text-[#273043] bg-white flex flex-row items-center border-0  shadow-[0_3px_10px_rgb(0,0,0,0.2)] px-5 py-2"
-              onClick={() => setShare((prev) => !prev)}
-            >
-              <LuShare2 /> <span>Share</span>
-            </button>
-            {share && <Share />}
+    <div className="mx-5 my-5 px-5 ">
+      <div className="bg-white rounded-md ring-1 h-full ring-slate-500 shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:m-8 relative overflow-x-auto px-5">
+        <header className="flex flex-row justify-between items-center p-5 border-b border-gray-400">
+          <div className="">
+            <form className=" ring-1 ring-gray-200 p-2 pr-8 rounded-[10px] items-center ">
+              <button className="cursor-pointer relative w-full max-w-sm">
+                <input type="name" placeholder="Search" />
+              </button>
+            </form>
           </div>
+          <div className="hidden md:flex gap-2">
+            <div>
+              <button
+                className="ring-1 text-[#273043] bg-white flex flex-row items-center border-0  shadow-[0_3px_10px_rgb(0,0,0,0.2)] px-5 py-2"
+                onClick={() => setShare((prev) => !prev)}
+              >
+                <LuShare2 /> <span>Share</span>
+              </button>
+              {share && <Share />}
+            </div>
 
-          <div>
-            <button
-              className="ring-1 text-[#273043] bg-white flex flex-row items-center border-0  shadow-[0_3px_10px_rgb(0,0,0,0.2)] px-5 py-2"
-              onClick={() => setFilter((prev) => !prev)}
-            >
-              <CiFilter /> <span>Filter</span>
-            </button>
-            {filter && <Filter />}
+            <div>
+              <button
+                className="ring-1 text-[#273043] bg-white flex flex-row items-center border-0  shadow-[0_3px_10px_rgb(0,0,0,0.2)] px-5 py-2"
+                onClick={() => setFilter((prev) => !prev)}
+              >
+                <CiFilter /> <span>Filter</span>
+              </button>
+              {filter && <Filter />}
+            </div>
+
+            <div>
+              <button
+                className="ring-1 text-[#273043] bg-white flex flex-row items-center border-0  shadow-[0_3px_10px_rgb(0,0,0,0.2)] px-5 py-2"
+                onClick={() => setTransfer((prev) => !prev)}
+              >
+                <CiExport /> <span>Export</span>
+              </button>
+              {transfer && <TransferMethod />}
+            </div>
           </div>
+        </header>
 
-          <div>
-            <button
-              className="ring-1 text-[#273043] bg-white flex flex-row items-center border-0  shadow-[0_3px_10px_rgb(0,0,0,0.2)] px-5 py-2"
-              onClick={() => setTransfer((prev) => !prev)}
-            >
-              <CiExport /> <span>Export</span>
-            </button>
-            {transfer && <TransferMethod />}
-          </div>
-        </div>
-      </header>
-
-      <main>
-        <div className="overflow-x-auto p-4 mx-5 ">
-          <div className="border-b border-gray-400">
-            <ul className="flex flex-row gap-5 py-5 font-bold items-center text-[#5C5C5C]">
-              <li className="text-[#2F80ED] bg-[#EAF2FD] rounded-[30px] p-2">
-                Primary Schools
-              </li>
-              <li>Junior Secondary Schools</li>
-              <li>Senior Secondary Schools</li>
-              <li>Technical and vocational</li>
-              <li>Higher Education</li>
-            </ul>
-          </div>
-          <table className="min-w-full border border-gray-300">
-            <thead className="text-[#1C4D8E] font-light">
-              <tr>
-                <th className="border p-2 text-center">
-                  <input type="checkbox" />
-                </th>
-                <th className="border p-2">Schools</th>
-                <th className="border p-2">Proposed-Funding ₦</th>
-                <th className="border p-2">Actual Funding ₦</th>
-                <th className="border p-2">Variance ₦</th>
-                <th className="border p-2">Projects ₦</th>
-                <th className="border p-2">% Budget Utilized</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {data.map((row) => (
-                <tr
-                  key={row.utilized}
-                  className="border even:bg-[#EAF2FD33] odd:bg-white text-[#273043] font-meduim text-[14px]"
-                >
-                  <td className="border p-2 text-center">
+        <main>
+          <div className="overflow-x-auto p-4 mx-5 ">
+            <div className="border-b border-gray-400">
+              <ul className="flex flex-row gap-5 py-5 font-bold items-center text-[#5C5C5C] text-[10px] md:text-base">
+                <li className="text-[#2F80ED] bg-[#EAF2FD] rounded-[30px] p-2 ">
+                  Primary Schools
+                </li>
+                <li>Junior Secondary Schools</li>
+                <li>Senior Secondary Schools</li>
+                <li>Technical and vocational</li>
+                <li>Higher Education</li>
+              </ul>
+            </div>
+            <table className="min-w-full border border-gray-300">
+              <thead className="text-[#1C4D8E] font-light text-[10px] md:text-base">
+                <tr>
+                  <th className="border p-2 text-center">
                     <input type="checkbox" />
-                  </td>
-                  <td className="border p-2 text-center">{row.school}</td>
-                  <td className="border p-2 text-center">{row.proposed}</td>
-                  <td className="border p-2 text-center">{row.actual}</td>
-                  <td className="border p-2 text-center">{row.variance}</td>
-                  <td className="border p-2 text-center">{row.projects}</td>
-                  <td className="border p-2 text-center">{row.utilized}</td>
+                  </th>
+                  <th className="border p-2">Schools</th>
+                  <th className="border p-2">Proposed-Funding ₦</th>
+                  <th className="border p-2">Actual Funding ₦</th>
+                  <th className="border p-2">Variance ₦</th>
+                  <th className="border p-2">Projects ₦</th>
+                  <th className="border p-2">% Budget Utilized</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </main>
+              </thead>
+
+              <tbody>
+                {data.map((row) => (
+                  <tr
+                    key={row.utilized}
+                    className="border even:bg-[#EAF2FD33] odd:bg-white text-[#273043] font-meduim text-[10px] md:text-base"
+                  >
+                    <td className="border p-2 text-center">
+                      <input type="checkbox" />
+                    </td>
+                    <td className="border p-2 text-center">{row.school}</td>
+                    <td className="border p-2 text-center">{row.proposed}</td>
+                    <td className="border p-2 text-center">{row.actual}</td>
+                    <td className="border p-2 text-center">{row.variance}</td>
+                    <td className="border p-2 text-center">{row.projects}</td>
+                    <td className="border p-2 text-center">{row.utilized}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
     </div>
   );
 };

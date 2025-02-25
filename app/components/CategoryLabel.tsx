@@ -7,7 +7,7 @@ const CategoryLabel = () => {
         <div key={item.id} className="flex flex-row gap-3">
           <div
             
-            className={`w-2 h-20 `}
+            className={`w-8 h-20 `}
             style={{ backgroundColor: item.color }}
           ></div>
           <div className="">

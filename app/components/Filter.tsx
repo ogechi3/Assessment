@@ -11,7 +11,7 @@ const Filter = () => {
         {data.map((name, index) => (
           <label
             key={index}
-            className="flex items-center space-x-2 border b border-gray-400"
+            className="flex items-center space-x-2 border-b border-gray-400 cursor-pointer text-[#273043]"
           >
             <input type="checkbox" value={name} className="w-4 h-4 " />
             <span> {name}</span>
