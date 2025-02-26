@@ -10,6 +10,7 @@ import {
 } from "recharts";
 import CategoryLabel from "./CategoryLabel";
 import Image from "next/image";
+import Iframe from "./Iframe";
 
 const Category = () => {
   return (
@@ -52,11 +53,9 @@ const Category = () => {
             </div>
           </div>
         </main>
-        <main>
-          <h1 className="font-bold leading-5 m-5">School Metrics</h1>
-          <div className="bg-white rounded-md ring-1  ring-slate-500  shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:w-2/4 w-full">
-            <Image src="/images/profile.png" alt="map" width={100} height={100}/>
-            <img src="images/map(3).png" alt="map" width="500" height="300" />
+        <main className="bg-white rounded-md ring-1  ring-slate-500  shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:w-2/4 w-full">
+          <div>
+            <Iframe />
           </div>
         </main>
       </section>

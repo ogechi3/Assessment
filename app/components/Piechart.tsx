@@ -12,10 +12,7 @@ import Label from "./Label";
 
 const DonutChart = () => {
   return (
-    <div className="">
-      <h1 className="font-bold leading-5 m-5">Revenue Source</h1>
     <div className="bg-white rounded-md ring-1 h-full ring-slate-500 shadow-[0_3px_10px_rgb(0,0,0,0.2)] w-full">
-      
       <div className="flex flex-row gap-3 py-5 items-center h-full">
         <div className="w-full h-[300px] relative flex items-center justify-center">
           <ResponsiveContainer width="100%" height="100%">
@@ -47,17 +44,14 @@ const DonutChart = () => {
         <Label />
       </div>
     </div>
-    </div>
   );
 };
-
 
 const data = [
   { name: "Group A", value: 400 },
   { name: "Group B", value: 300 },
   { name: "Group C", value: 300 },
-  
 ];
 
-const COLORS = ["#8A70EF", "#2F80ED","#56CCF2",];
+const COLORS = ["#8A70EF", "#2F80ED", "#56CCF2"];
 export default DonutChart;

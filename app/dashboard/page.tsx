@@ -123,8 +123,11 @@ const page = () => {
               </form>
             </div>
             <div className="relative rounded-[30px] bg-blue-400">
-              <button onClick={() => setIsOpen(false)}>
-                <MdClose className="absolute top-0 right-3 text-black" />
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-0 right-3 text-black"
+              >
+                <MdClose className="" />
               </button>
             </div>
           </div>

@@ -90,9 +90,7 @@ const ChartToggle = () => {
           </div>
         </div>
         <div className="h-100% items-stretch">
-
-        <DonutChart />
-
+          <DonutChart />
         </div>
       </div>
     </div>
